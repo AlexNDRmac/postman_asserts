@@ -30,12 +30,4 @@ var functions = function loadAsserts() {
     };
 
     return asserts;
-} + '; loadAsserts();';
-
-var postmanAsserts = JSON.stringify(functions);
-
-if (!pm.globals.has('postmanAsserts') || pm.globals.get('postmanAsserts') !== postmanAsserts) {
-    pm.globals.set('postmanAsserts', postmanAsserts);
-
-    tests['Set up Postman Asserts to Globals'] = pm.globals.has('postmanAsserts');
-}
+};
