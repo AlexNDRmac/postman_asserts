@@ -1,6 +1,5 @@
-// Reusable Functions for Postman Asserts
-let functions = function loadAsserts() {
-    let asserts = {};
+var functions = function loadAsserts() {
+    var asserts = {};
 
     asserts.isJsonResponse = function isJsonResponse() {
         pm.test('Response should have JSON Body', function () {
@@ -33,7 +32,7 @@ let functions = function loadAsserts() {
     return asserts;
 } + '; loadAsserts();';
 
-let postmanAsserts = JSON.stringify(functions);
+var postmanAsserts = JSON.stringify(functions);
 
 if (!pm.globals.has('postmanAsserts') || pm.globals.get('postmanAsserts') !== postmanAsserts) {
     pm.globals.set('postmanAsserts', postmanAsserts);
