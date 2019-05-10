@@ -33,3 +33,12 @@ function isEquals(expected, actual, message) {
         pm.expect(expected).to.eql(actual);
     });
 }
+
+/** Check if Raw Response Body Contains `needle`. Optional: message - you can provide your custom text */
+function isRawResponseBodyContains(needle, message) {
+    message = message || 'Raw Response Body contains ' + needle;
+
+    pm.test(message, function () {
+        pm.expect(pm.response.text()).to.include(needle);
+    });
+}
