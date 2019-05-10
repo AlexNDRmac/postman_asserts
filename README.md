@@ -21,6 +21,27 @@ To have Assertions inside your Collection, you need to do next steps:
  - In the Postman `Test scripts` - eval `postman_asserts` global variable
  - Call Asserts functions by functions' name
 
+### Setting up Assertions Script to Postman Globals
+
+To set up Assertions - just download [Collection](./PostmanAssertsInit.postman_collection.json) and make API call with it. This Request will get Script content and set up Global variable into Postman Environment.
+
+### Using Assertions inside Postman Tests
+
+Into `Tests` window call Assertions after `eval()` Postman Globals variable, which contains Script body.
+
+```javascript
+eval(JSON.parse(pm.globals.get('postman_asserts')));
+
+const schema = {
+    "type": "object",
+    "required": ['args', 'headers']
+};
+
+isJsonResponse();
+isResponseStatus(200);
+validateJsonSchema(schema);
+```
+
 ## License
 
 This project is open source software licensed under the GNU General Public Licence version 3.
