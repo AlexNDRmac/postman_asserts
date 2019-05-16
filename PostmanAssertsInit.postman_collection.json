@@ -1,69 +1,69 @@
 {
-	"info": {
-		"_postman_id": "62aa89cf-8511-4065-bb14-af94e8e844ea",
-		"name": "Postman Assertions for Autotests",
-		"description": "# Postman Asserts | provide a clean way to organise tests",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-	},
-	"item": [
-		{
-			"name": "SetUp Postman Asserts",
-			"item": [
-				{
-					"name": "SetUp Postman Asserts",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "5729b90b-16a8-4e8f-8355-775afa6b5485",
-								"exec": [
-									"// Clear Asserts Script",
-									"pm.globals.unset('postman_asserts');",
-									"",
-									"// Set Up fresh Asserts Script",
-									"pm.globals.set('postman_asserts', JSON.stringify(responseBody));",
-									"",
-									"try {",
-									"    eval(JSON.parse(pm.globals.get('postman_asserts')));",
-									"    tests['Postman Asserts Ready to Use'] = (typeof isResponseStatus === 'function');",
-									"} catch (e) {",
-									"    tests['Error ' + e.message] = '';",
-									"}",
-									"",
-									"isResponseStatus(200);",
-									"isRawResponseBodyContains(\"Asserts for Postman\", \"Response Body contains Postman Asserts\");",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://github.com/AlexNDRmac/postman_asserts/raw/master/pm_asserts.js",
-							"protocol": "https",
-							"host": [
-								"github",
-								"com"
-							],
-							"path": [
-								"AlexNDRmac",
-								"postman_asserts",
-								"raw",
-								"master",
-								"pm_asserts.js"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		}
-	]
+  "info": {
+    "_postman_id": "62aa89cf-8511-4065-bb14-af94e8e844ea",
+    "name": "Postman Assertions for Autotests",
+    "description": "# Postman Asserts | provide a clean way to organise tests",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "SetUp Postman Asserts",
+      "item": [
+        {
+          "name": "SetUp Postman Asserts",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "5729b90b-16a8-4e8f-8355-775afa6b5485",
+                "exec": [
+                  "// Clear Asserts Script",
+                  "pm.globals.unset('postman_asserts');",
+                  "",
+                  "// Set Up fresh Asserts Script",
+                  "pm.globals.set('postman_asserts', JSON.stringify(responseBody));",
+                  "",
+                  "try {",
+                  "    eval(JSON.parse(pm.globals.get('postman_asserts')));",
+                  "    tests['Postman Asserts Ready to Use'] = (typeof isResponseStatus === 'function');",
+                  "} catch (e) {",
+                  "    tests['Error ' + e.message] = '';",
+                  "}",
+                  "",
+                  "isResponseStatus(200);",
+                  "isRawResponseBodyContains(\"Asserts for Postman\", \"Response Body contains Postman Asserts\");",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://github.com/AlexNDRmac/postman_asserts/raw/master/pm_asserts.js",
+              "protocol": "https",
+              "host": [
+                "github",
+                "com"
+              ],
+              "path": [
+                "AlexNDRmac",
+                "postman_asserts",
+                "raw",
+                "master",
+                "pm_asserts.js"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
 }
