@@ -42,3 +42,24 @@ function isRawResponseBodyContains(needle, message) {
         pm.expect(pm.response.text()).to.include(needle);
     });
 }
+
+/**
+ * Set up and Validate Variable from Response to local ENV
+ *
+ * @param {string} localVar - Postman ENV variable name
+ * @param {string} index    - index (dot notation)
+ * @param {object} jsonData - pm.response Object
+ */
+function ensureEnv(localVar, index, jsonData) {
+    jsonValue = _.get(jsonData, index);
+
+    pm.environment.unset(localVar);
+    pm.environment.set(localVar, jsonValue);
+
+    envValue = pm.environment.get(localVar);
+    message  = 'Variable is set to ENV: ' + localVar + ' = ' + envValue;
+
+    pm.test(message, function () {
+        pm.expect(jsonValue).to.eql(envValue);
+    });
+}
