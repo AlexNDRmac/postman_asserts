@@ -47,12 +47,10 @@ function isRawResponseBodyContains(needle, message) {
  * Set up and Validate Variable from Response to local ENV
  *
  * @param {string} localVar - Postman ENV variable name
- * @param {string} index    - index (dot notation)
- * @param {object} jsonData - pm.response Object
+ * @param {string | number | boolean} jsonValue - pm.response Object value
+ * @returns void
  */
-function ensureEnv(localVar, index, jsonData) {
-    jsonValue = _.get(jsonData, index);
-
+function ensureEnv(localVar, jsonValue) {
     pm.environment.unset(localVar);
     pm.environment.set(localVar, jsonValue);
 
