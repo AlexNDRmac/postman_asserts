@@ -61,3 +61,12 @@ function ensureEnv(localVar, jsonValue) {
         pm.expect(jsonValue).to.eql(envValue);
     });
 }
+
+/**
+ * set next request
+ *
+ * @param {string} requestName - the next request name
+ */
+function nextRequest(requestName){
+    postman.setNextRequest(requestName);
+}
