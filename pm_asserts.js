@@ -2,21 +2,32 @@
  * This script defines global variables to provide Asserts for Postman unit test case Runner.
  */
 
-/** Check if Response have JSON body */
+/**
+ * Check if Response have JSON body
+ * @returns void
+ */
 function isJsonResponse() {
     pm.test('Response should have JSON Body', function () {
         pm.response.to.have.jsonBody();
     });
 }
 
-/** Check if Response have expected Status Code */
+/**
+ * Check if Response have expected Status Code
+ * @param {integer} statusCode
+ * @returns void
+ */
 function isResponseStatus(statusCode) {
     pm.test('Status code is ' + statusCode, function () {
         pm.response.to.have.status(statusCode);
     });
 }
 
-/** Validate JSON Response with Tiny Validator (tv4, built-in into Postman), using JSON Schema */
+/**
+ * Validate JSON Response with Tiny Validator (tv4, built-in into Postman), using JSON Schema
+ * @param {object} schema - JSON Schema for Validation
+ * @returns void
+ */
 function validateJsonSchema(schema) {
     tests["Response Data is Valid"] = tv4.validate(pm.response.json(), schema);
 
@@ -25,7 +36,14 @@ function validateJsonSchema(schema) {
     }
 }
 
-/** Check if two agruments are Equals. Optional: message - you can provide your custom text */
+/**
+ * Check if two agruments are Equals.
+ * Optional: message - you can provide your custom text
+ * @param {any} expected
+ * @param {any} actual
+ * @param {string} message
+ * @returns void
+ */
 function isEquals(expected, actual, message) {
     message = message || 'Expected value is Equals to actual';
 
@@ -34,7 +52,13 @@ function isEquals(expected, actual, message) {
     });
 }
 
-/** Check if Raw Response Body Contains `needle`. Optional: message - you can provide your custom text */
+/**
+ * Check if Raw Response Body Contains `needle`.
+ * Optional: message - you can provide your custom text
+ * @param {string} message
+ * @param {string} needle
+ * @returns void
+ */
 function isRawResponseBodyContains(needle, message) {
     message = message || 'Raw Response Body contains ' + needle;
 
@@ -54,8 +78,8 @@ function ensureEnv(localVar, jsonValue) {
     pm.environment.unset(localVar);
     pm.environment.set(localVar, jsonValue);
 
-    envValue = pm.environment.get(localVar);
-    message  = 'Variable is set to ENV: ' + localVar + ' = ' + envValue;
+    var envValue = pm.environment.get(localVar);
+    var message  = 'Variable is set to ENV: ' + localVar + ' = ' + envValue;
 
     pm.test(message, function () {
         pm.expect(jsonValue).to.eql(envValue);
@@ -63,7 +87,7 @@ function ensureEnv(localVar, jsonValue) {
 }
 
 /**
- * set next request
+ * Set next request
  *
  * @param {string} requestName - the next request name
  */
