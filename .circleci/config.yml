@@ -4,7 +4,7 @@ aliases:
   # CONSTANTS
 
   - &node_key_base node-v1-
-  - &node_key node-v1-{{ checksum "package-lock.json" }}
+  - &node_key node-v1-{{ checksum "package.json" }}
 
   # CACHES
 
