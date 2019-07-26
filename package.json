@@ -1,0 +1,26 @@
+{
+  "name": "postman_asserts",
+  "version": "0.0.1",
+  "license": "MIT",
+  "description": "Tiny scripts for Postman Auto tests (reusable Assertions for postman tests and json schema validation)",
+  "author": "AlexNDRmac <alexndr.mac@gmail.com>",
+  "dependencies": {
+    "newman": "^4.5.1",
+    "newman-reporter-html": "^1.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^5.5.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint pm_asserts.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexNDRmac/postman_asserts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AlexNDRmac/postman_asserts/issues"
+  },
+  "homepage": "https://github.com/AlexNDRmac/postman_asserts#readme"
+}
