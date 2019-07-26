@@ -1,5 +1,7 @@
 # Postman Asserts | provide a clean way to organise tests
 
+![CircleCI](https://img.shields.io/circleci/build/github/AlexNDRmac/postman_asserts?style=flat-square)
+
 If you want use Tests inside Postman, you must always write assertions like this:
 
 ```javascript
