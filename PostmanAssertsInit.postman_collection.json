@@ -18,20 +18,20 @@
                 "id": "5729b90b-16a8-4e8f-8355-775afa6b5485",
                 "exec": [
                   "// Clear Asserts Script",
-                  "pm.globals.unset('postman_asserts');",
+                  "postman.clearGlobalVariable('postman_asserts');",
                   "",
                   "// Set Up fresh Asserts Script",
-                  "pm.globals.set('postman_asserts', JSON.stringify(responseBody));",
+                  "postman.setGlobalVariable('postman_asserts', responseBody);",
                   "",
                   "try {",
-                  "    eval(JSON.parse(pm.globals.get('postman_asserts')));",
+                  "    eval(globals.postman_asserts);",
                   "    tests['Postman Asserts Ready to Use'] = (typeof isResponseStatus === 'function');",
                   "} catch (e) {",
                   "    tests['Error ' + e.message] = '';",
                   "}",
                   "",
                   "isResponseStatus(200);",
-                  "isRawResponseBodyContains(\"Asserts for Postman\", \"Response Body contains Postman Asserts\");",
+                  "isRawResponseBodyContains('function isResponseStatus', 'Response Body contains Postman Asserts');",
                   ""
                 ],
                 "type": "text/javascript"
@@ -46,7 +46,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "https://github.com/AlexNDRmac/postman_asserts/raw/master/pm_asserts.js",
+              "raw": "https://github.com/AlexNDRmac/postman_asserts/raw/master/pm_asserts.min.js",
               "protocol": "https",
               "host": [
                 "github",
@@ -57,7 +57,7 @@
                 "postman_asserts",
                 "raw",
                 "master",
-                "pm_asserts.js"
+                "pm_asserts.min.js"
               ]
             }
           },
