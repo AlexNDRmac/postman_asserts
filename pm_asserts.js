@@ -94,3 +94,16 @@ function ensureEnv(localVar, jsonValue) {
 function nextRequest(requestName){
     postman.setNextRequest(requestName);
 }
+
+/**
+ * Log Header param to Test Result
+ *
+ * @param {string} key - header param key
+ * @param {string} message - key name for example
+ * @returns void
+ */
+function logHeader(key, message) {
+    message = message || 'Header ' + key + ':';
+
+    pm.test(message + ' ' + pm.request.headers.get(key));
+}
