@@ -1,0 +1,50 @@
+# https://help.github.com/en/categories/automating-your-workflow-with-github-actions
+
+name: Postman Tests
+
+on:
+  push:
+    path-ignore:
+      - 'README.md'
+
+  pull_request:
+    branches:
+      - 'master'
+      - 'develop'
+
+# Workflow
+jobs:
+  build:
+    name: ${{ matrix.osname }}
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os:
+          - ubuntu-18.04
+          - macOS-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Cache node modules
+        uses: actions/cache@v1
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ./node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Postman tests
+        run: |
+          npx newman run PostmanAssertsInit.postman_collection.json \
+            -r cli,html,json \
+            --reporter-json-export ./postman_runner_report.json \
+            --reporter-html-export ./postman_ci_tests_report.html
