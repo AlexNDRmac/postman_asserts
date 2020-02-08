@@ -1,6 +1,6 @@
 # Postman Asserts | provide a clean way to organise tests
 
-[![CircleCI](https://img.shields.io/circleci/build/github/AlexNDRmac/postman_asserts?style=flat-square)](https://circleci.com/gh/AlexNDRmac/postman_asserts)
+[![Build status][actions build badge]][actions build link]
 
 If you want use Tests inside Postman, you must always write assertions like this:
 
@@ -47,3 +47,7 @@ validateJsonSchema(schema);
 ## License
 
 This project is open source software licensed under the GNU General Public Licence version 3.
+
+
+[actions build badge]: https://github.com/AlexNDRmac/postman_asserts/workflows/Postman%20Tests/badge.svg "Build status"
+[actions build link]: https://github.com/AlexNDRmac/postman_asserts/actions
