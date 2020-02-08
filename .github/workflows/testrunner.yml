@@ -15,7 +15,7 @@ on:
 # Workflow
 jobs:
   build:
-    name: ${{ matrix.osname }}
+    name: ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
 
     strategy:
@@ -48,3 +48,9 @@ jobs:
             -r cli,html,json \
             --reporter-json-export ./postman_runner_report.json \
             --reporter-html-export ./postman_ci_tests_report.html
+
+      - name: Archive postman reports
+        uses: actions/upload-artifact@v1
+        with:
+          name: postman_ci_tests_report.html
+          path: ./postman_ci_tests_report.html
