@@ -1,6 +1,7 @@
 # Postman Asserts | provide a clean way to organise tests
 
 [![Build status][actions build badge]][actions build link]
+[![Repository certification][codacy badge]][codacy link]
 
 If you want use Tests inside Postman, you must always write assertions like this:
 
@@ -50,3 +51,5 @@ This project is open source software licensed under the GNU General Public Licen
 
 [actions build badge]: https://github.com/AlexNDRmac/postman_asserts/workflows/Postman%20Tests/badge.svg "Build status"
 [actions build link]: https://github.com/AlexNDRmac/postman_asserts/actions
+[codacy badge]: https://api.codacy.com/project/badge/Grade/5cb97130b06542b08ce4a370e9f10679 "Repository certification"
+[codacy link]: https://www.codacy.com/manual/AlexNDRmac/postman_asserts?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=AlexNDRmac/postman_asserts&amp;utm_campaign=Badge_Grade
