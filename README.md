@@ -19,9 +19,9 @@ It will be better if we can use `Reusable functions` inside Postman. It's more f
 
 To have Assertions inside your Collection, you need to do next steps:
 
- - Save content of `pm_asserts.min.js` script as a global variable
- - In the Postman `Test scripts` - eval `postman_asserts` global variable
- - Call Asserts functions by functions' name
+- Save content of `pm_asserts.min.js` script as a global variable
+- In the Postman `Test scripts` - eval `postman_asserts` global variable
+- Call Asserts functions by functions' name
 
 ### Setting up Assertions Script to Postman Globals
 
@@ -47,7 +47,6 @@ validateJsonSchema(schema);
 ## License
 
 This project is open source software licensed under the GNU General Public Licence version 3.
-
 
 [actions build badge]: https://github.com/AlexNDRmac/postman_asserts/workflows/Postman%20Tests/badge.svg "Build status"
 [actions build link]: https://github.com/AlexNDRmac/postman_asserts/actions
