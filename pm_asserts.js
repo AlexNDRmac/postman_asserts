@@ -2,12 +2,17 @@
  * This script defines global variables to provide Asserts for Postman unit test case Runner.
  */
 
+/* global pm */
+/* global tv4 */
+/* global tests */
+/* global postman */
+
 /**
  * Check if Response have JSON body
  * @returns void
  */
 function isJsonResponse() {
-    pm.test('Response should have JSON Body', function () {
+    pm.test("Response should have JSON Body", function () {
         pm.response.to.have.jsonBody();
     });
 }
@@ -18,7 +23,7 @@ function isJsonResponse() {
  * @returns void
  */
 function isResponseStatus(statusCode) {
-    pm.test('Status code is ' + statusCode, function () {
+    pm.test("Status code is " + statusCode, function () {
         pm.response.to.have.status(statusCode);
     });
 }
@@ -45,7 +50,7 @@ function validateJsonSchema(schema) {
  * @returns void
  */
 function isEquals(expected, actual, message) {
-    message = message || 'Expected value is Equals to actual';
+    message = message || "Expected value is Equals to actual";
 
     pm.test(message, function () {
         pm.expect(expected).to.eql(actual);
@@ -60,7 +65,7 @@ function isEquals(expected, actual, message) {
  * @returns void
  */
 function isRawResponseBodyContains(needle, message) {
-    message = message || 'Raw Response Body contains ' + needle;
+    message = message || "Raw Response Body contains " + needle;
 
     pm.test(message, function () {
         pm.expect(pm.response.text()).to.include(needle);
@@ -79,7 +84,7 @@ function ensureEnv(localVar, jsonValue) {
     pm.environment.set(localVar, jsonValue);
 
     var envValue = pm.environment.get(localVar);
-    var message  = 'Variable is set to ENV: ' + localVar + ' = ' + envValue;
+    var message  = "Variable is set to ENV: " + localVar + " = " + envValue;
 
     pm.test(message, function () {
         pm.expect(jsonValue).to.eql(envValue);
@@ -103,7 +108,7 @@ function nextRequest(requestName){
  * @returns void
  */
 function logHeader(key, message) {
-    message = message || 'Header ' + key + ':';
+    message = message || "Header " + key + ":";
 
-    pm.test(message + ' ' + pm.request.headers.get(key));
+    pm.test(message + " " + pm.request.headers.get(key));
 }
