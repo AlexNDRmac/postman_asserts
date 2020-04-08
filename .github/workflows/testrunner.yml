@@ -4,7 +4,7 @@ name: Postman Tests
 
 on:
   push:
-    path-ignore:
+    paths-ignore:
       - 'README.md'
 
   pull_request:
