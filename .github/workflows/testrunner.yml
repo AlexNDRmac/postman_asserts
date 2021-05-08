@@ -24,10 +24,10 @@ jobs:
           - macOS-latest
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
 
       - name: Cache node modules
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         env:
           cache-name: cache-node-modules
         with:
@@ -42,14 +42,10 @@ jobs:
         run: npm install
 
       - name: Run Postman tests
-        run: |
-          npx newman run PostmanAssertsInit.postman_collection.json \
-            -r cli,html,json \
-            --reporter-json-export ./reports/postman_runner_report.json \
-            --reporter-html-export ./reports/postman_ci_tests_report.html
+        run: make test
 
-      - name: Archive postman reports
-        uses: actions/upload-artifact@v1
+      - name: Upload postman reports
+        uses: actions/upload-artifact@v2
         with:
           name: postman_ci_tests_reports
           path: ./reports
