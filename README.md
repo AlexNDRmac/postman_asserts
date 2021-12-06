@@ -1,4 +1,4 @@
-# Postman Asserts | provide a clean way to organise tests
+# Postman Asserts | provide a clean way to organize tests
 
 [![Build status][actions build badge]][actions build link]
 [![Repository certification][codacy badge]][codacy link]
@@ -47,9 +47,9 @@ validateJsonSchema(schema);
 
 ## License
 
-This project is open source software licensed under the GNU General Public Licence version 3.
+This project is open source software licensed under the GNU General Public License version 3.
 
 [actions build badge]: https://github.com/AlexNDRmac/postman_asserts/workflows/Postman%20Tests/badge.svg "Build status"
 [actions build link]: https://github.com/AlexNDRmac/postman_asserts/actions
 [codacy badge]: https://api.codacy.com/project/badge/Grade/5cb97130b06542b08ce4a370e9f10679 "Repository certification"
-[codacy link]: https://www.codacy.com/manual/AlexNDRmac/postman_asserts?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=AlexNDRmac/postman_asserts&amp;utm_campaign=Badge_Grade
+[codacy link]: https://www.codacy.com/manual/AlexNDRmac/postman_asserts
