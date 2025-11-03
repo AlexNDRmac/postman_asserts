@@ -5,7 +5,7 @@
   "description": "Tiny scripts for Postman Auto tests (reusable Assertions for postman tests and json schema validation)",
   "author": "AlexNDRmac <alexndr.mac@gmail.com>",
   "dependencies": {
-    "newman": "^5.3",
+    "newman": "^6.2",
     "newman-reporter-htmlextra": "^1.22"
   },
   "devDependencies": {
