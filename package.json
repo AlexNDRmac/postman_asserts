@@ -6,10 +6,10 @@
   "author": "AlexNDRmac <alexndr.mac@gmail.com>",
   "dependencies": {
     "newman": "^6.2",
-    "newman-reporter-htmlextra": "^1.22"
+    "newman-reporter-htmlextra": "^1.23.1"
   },
   "devDependencies": {
-    "eslint": "^8.4",
+    "eslint": "^8.57.1",
     "eslint-utils": "^3.0"
   },
   "scripts": {
