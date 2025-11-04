@@ -10,3 +10,15 @@ updates:
     assignees: [AlexNDRmac]
     commit-message:
       prefix: "ci: "
+
+  # npm dependencies
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    target-branch: master
+    assignees: [AlexNDRmac]
+    commit-message:
+      prefix: "chore(deps): "
+    open-pull-requests-limit: 10
+    versioning-strategy: increase
