@@ -9,7 +9,7 @@
     "newman-reporter-htmlextra": "^1.23.1"
   },
   "devDependencies": {
-    "eslint": "^8.57.1",
+    "eslint": "^9.39.1",
     "eslint-utils": "^3.0"
   },
   "scripts": {
